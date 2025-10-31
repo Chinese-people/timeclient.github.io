@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeClient - 我的世界顶级PVP模组</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4ade80',
+                        secondary: '#1e3a8a',
+                        dark: '#111827',
+                        light: '#f3f4f6'
+                    },
+                    fontFamily: {
+                        minecraft: ['"Minecraftia"', 'monospace'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            .text-glow {
+                text-shadow: 0 0 10px rgba(74, 222, 128, 0.7);
+            }
+            .bg-pattern {
+                background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234ade80' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            }
+            .minecraft-btn {
+                @apply relative px-6 py-3 bg-primary text-dark font-bold rounded transition-all duration-300 hover:bg-primary/80 active:scale-95;
+                box-shadow: 0 4px 0 #22c55e, 0 6px 10px rgba(0,0,0,0.3);
+            }
+            .minecraft-btn::after {
+                content: '';
+                @apply absolute inset-0 rounded opacity-0 hover:opacity-100 transition-opacity duration-300 bg-white/20;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Minecraftia&display=swap" rel="stylesheet">
+</head>
+<body class="bg-dark text-light bg-pattern min-h-screen">
+    <!-- 导航栏 -->
+    <nav class="sticky top-0 z-50 bg-dark/80 backdrop-blur-md border-b border-primary/30">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <i class="fa fa-clock-o text-primary text-2xl"></i>
+                <span class="font-minecraft text-xl text-primary">TimeClient</span>
+            </div>
+            <div class="hidden md:flex gap-6 items-center">
+                <a href="#features" class="hover:text-primary transition-colors">功能</a>
+                <a href="#advantages" class="hover:text-primary transition-colors">优势</a>
+                <a href="#purchase" class="minecraft-btn">立即购买</a>
+            </div>
+            <button class="md:hidden text-primary">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <header class="relative py-20 md:py-32 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-secondary/30 to-transparent z-0"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="font-minecraft text-[clamp(2rem,5vw,4rem)] text-primary text-glow mb-6 leading-tight">
+                    TimeClient
+                </h1>
+                <p class="text-[clamp(1.1rem,2vw,1.5rem)] mb-8 text-light/90">
+                    让你的Minecraft PVP更简单，安全不被检测
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#purchase" class="minecraft-btn text-lg">
+                        立即购买 - 仅需10元永久使用
+                    </a>
+                    <a href="#features" class="px-6 py-3 border border-primary/50 rounded hover:bg-primary/10 transition-all">
+                        了解更多 <i class="fa fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute -bottom-1 left-0 right-0 h-16 bg-gradient-to-t from-dark to-transparent"></div>
+    </header>
+
+    <!-- 主要特点 -->
+    <section id="features" class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <h2 class="text-center text-3xl md:text-4xl mb-16 font-minecraft text-primary">核心功能</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 功能卡片1 -->
+                <div class="bg-dark/60 backdrop-blur-sm p-6 rounded-lg border border-primary/20 hover:border-primary/50 transition-all group">
+                    <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary/30 transition-all">
+                        <i class="fa fa-shield text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-primary">Grimac 防检测</h3>
+                    <p class="text-light/70">
+                        完全绕过Grimac反作弊系统，让你在任何服务器中安全使用，无需担心封禁风险。
+                    </p>
+                </div>
+                
+                <!-- 功能卡片2 -->
+                <div class="bg-dark/60 backdrop-blur-sm p-6 rounded-lg border border-primary/20 hover:border-primary/50 transition-all group">
+                    <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary/30 transition-all">
+                        <i class="fa fa-gamepad text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-primary">简化PVP操作</h3>
+                    <p class="text-light/70">
+                        自动化关键PVP操作，降低操作难度，提升反应速度，让你轻松战胜对手。
+                    </p>
+                </div>
+                
+                <!-- 功能卡片3 -->
+                <div class="bg-dark/60 backdrop-blur-sm p-6 rounded-lg border border-primary/20 hover:border-primary/50 transition-all group">
+                    <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary/30 transition-all">
+                        <i class="fa fa-keyboard-o text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-primary">顶级客户端热键</h3>
+                    <p class="text-light/70">
+                        配备与顶级客户端相同的热键系统，支持自定义设置，操作流畅便捷。
+                    </p>
+                </div>
+                
+                <!-- 功能卡片4 -->
+                <div class="bg-dark/60 backdrop-blur-sm p-6 rounded-lg border border-primary/20 hover:border-primary/50 transition-all group">
+                    <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mb-4 group-hover
